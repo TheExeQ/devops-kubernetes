@@ -1,0 +1,19 @@
+namespace:
+  name: books-app
+
+backend:
+  replicas: 3
+  image:
+    repository: ghcr.io/theexeq/app
+    tag: latest
+  port: 3000
+  service:
+    port: 8080
+
+database:
+  image: postgres:16-alpine
+  port: 5432
+  name: booksdb
+  user: postgres
+  password: postgres
+  storageSize: 1Gi
